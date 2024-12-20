@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Homepage - Variety Dishes</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styleHexCell.css') }}">
+		<!-- <script src="VarietyDishesJS.js"></script> -->
+	</head>
+	<body>
+		{% for mesg in get_flashed_messages() %}
+      	<h1>{{ mesg }}</h1>
+      	{% endfor %}
+		<div>
+			<ul>
+ 				<li><a href="/">Home</a></li>
+  				<li><a href="/login">Log in</a></li>
+  				<li><a href="/signup">Sign up</a></li>
+				<li><a href="/logout">Log out</a></li>
+			</ul>
+		</div>
+		<br/>
+		<div>
+			<table>
+				<tr>
+					<th>Username</th>
+					<th>Account created</th>
+				</tr>
+
+				<tr>
+					<td>{{ user.username }}</td>
+					<td>{{ user.date_created.date()}}</td>
+				</tr>
+
+			</table>
+		</div>
+        <br/>
+        <a href="/">Click here for the homepage</a>
+
+		<footer> &copy 2023 - Variety Dishes - All rights reserved </footer>
+	</body>
+</html>

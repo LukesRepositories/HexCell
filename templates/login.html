@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Homepage - Variety Dishes</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styleHexCell.css') }}">
+		<!-- <script src="VarietyDishesJS.js"></script> -->
+	</head>
+	<body>
+		{% for mesg in get_flashed_messages() %}
+      	<h1>{{ mesg }}</h1>
+      	{% endfor %}
+        <div>
+			<ul>
+ 				<li><a href="/">Home</a></li>
+  				<li><a href="/login">Log in</a></li>
+  				<li><a href="/signup">Sign up</a></li>
+				<li><a href="/logout">Log out</a></li>
+			</ul>
+		</div>
+        <div>
+            <form action="/login" method="POST">
+                <label>Username:</label></br>
+                <input type="text" name="username" id="username"></br>
+                <label>Password:</label></br>
+                <input type="text" name="password" id="password"></br>
+                <input type="submit" value="login">
+            </form>
+        </div>
+    </body>
+</html>/

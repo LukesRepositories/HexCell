@@ -1,0 +1,86 @@
+body, html {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: lightblue;
+}
+
+.content {
+    margin: 0 auto;
+    width: 400px;
+}
+
+table, td, th {
+    border: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    height: 30px;
+}
+
+td {
+    text-align: center;
+    padding: 5px;
+}
+
+.form {
+    margin-top: 20px;
+}
+
+#content {
+    width: 70%;
+}
+
+.hex-container {
+    padding: 100px;
+}
+
+.hex-left {
+    float: left;
+    border-right: 30px solid #6C6;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
+}
+
+.hex-mid {
+    float: left;
+    width: 60px;
+    height: 104px;
+    background-color: #6C6;
+}
+
+.hex-right {
+    float: left;
+    border-left: 30px solid #6C6;
+    border-top: 52px solid transparent;
+    border-bottom: 52px solid transparent;
+}
+
+.row1-left {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.row1-mid {
+    margin-top: 20px;
+}
+
+.row1-right {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.square {
+		width: 40px;
+		height: 40px;
+		border-top: 40px solid #6C6;
+		border-bottom: 40px solid #6C6;
+		border-left: 40px solid #6C6;
+		border-right: 40px solid #6C6;
+}

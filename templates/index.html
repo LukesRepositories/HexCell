@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Homepage - Variety Dishes</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/styleHexCell.css') }}">
+		<!-- <script src="VarietyDishesJS.js"></script> -->
+	</head>
+	<body>
+
+		<div>
+			<ul>
+ 				<li><a href="/">Home</a></li>
+  				<li><a href="/login">Log in</a></li>
+  				<li><a href="/signup">Sign up</a></li>
+				<li><a href="/logout">Log out</a></li>
+			</ul>
+		</div>
+
+		{% for question in questions %}
+		<form action="/maths" method="POST">
+			<label>{{ question.equation }}</label>
+			<input type="text" name="math_answer{{ loop.index0 }}" id="math_answer{{ loop.index0 }}"></br>
+			{% endfor %}
+			<input type="submit" name="submit_answers" value="Submit answers">
+		</form>
+		{% for mesg in get_flashed_messages() %}
+      	<h2>{{ mesg }}</h2>
+      	{% endfor %}
+		<div>
+			<div class="hex-left"></div>
+			<div class="hex-mid"></div>
+			<div class="hex-right"></div>
+		</div>
+		<div>
+			<div class="hex-left"></div>
+			<div class="hex-mid"></div>
+			<div class="hex-right"></div>
+		</div>
+		<div>
+			<div class="hex-left"></div>
+			<div class="hex-mid"></div>
+			<div class="hex-right"></div>
+		</div>
+		<div>
+			<div class="hex-left row2"></div>
+			<div class="hex-mid row2"></div>
+			<div class="hex-right row2"></div>
+		</div>
+		<div>
+			<div class="hex-left row2"></div>
+			<div class="hex-mid row2"></div>
+			<div class="hex-right row2"></div>
+		</div>
+		<div>
+			<div class="hex-left row2"></div>
+			<div class="hex-mid row2"></div>
+			<div class="hex-right row2"></div>
+		</div>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div>
+			<form action="/" method="POST">
+				<input type="text" name="content" id="content">
+				<input type="submit" name="comment" value="Add Task">
+			</form>
+			<table>
+				<tr>
+					<th>Username</th>
+					<th>Comment</th>
+					<th>Likes</th>
+					<th>Time of comment</th>
+					<th>Like</th>
+				</tr>
+				{% for comment in comments %}
+				<tr>
+					<td><a href="/username/{{ comment.id }}">{{ comment.username }}</a></td>
+					<td>{{ comment.content }}</td>
+					<td>{{ comment.likes }}</td>
+					<td>{{ comment.date_created.date()}}</td>
+					<td>
+						<a href="/like/{{comment.id}}">Like</a>
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
+
+		</div>
+
+		<footer> &copy 2023 - Variety Dishes - All rights reserved </footer>
+	</body>
+</html>
