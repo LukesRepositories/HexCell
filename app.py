@@ -189,10 +189,10 @@ def check_equations():
         db.session.commit()
 
         # Render results or redirect
-        return render_template('results.html', results=results, user=current_user, score=total_score)
+        return render_template('index.html', results=results, user=current_user, score=total_score)
     except Exception as e:
         db.session.rollback()  # Rollback in case of any database errors
-        return f"There was an error processing your answers: {str(e)}"
+        return redirect('/')
 
 
 @app.route('/', methods=['POST', 'GET'])
